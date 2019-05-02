@@ -1,0 +1,73 @@
+@font-face {
+	font-family: 'OpenSans';
+    src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'OpenSans-Bold';
+    src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'OpenSans-Italic';
+    src: url('../fonts/OpenSans-Italic.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'OpenSans-Light';
+    src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
+
+body {
+
+    font-family: 'OpenSans-Light';
+
+}
+
+div.container {
+
+    background-color: #473e68;
+    border-radius: 10px;
+    display: inline-block;
+    float: center;
+    padding: 10px;
+    
+}
+
+a.minButton {
+
+    background-color: darkgoldenrod;
+    border-radius: 10px;
+    border-style: 1px solid red;
+    display: inline;
+    font-family: 'OpenSans-Bold';
+    letter-spacing: 0.1em;
+    margin: 10px;
+    padding: 5px;
+    overflow: hidden;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.5s ease;
+
+}
+
+a.minButton:hover {
+
+    background-color: pink;
+
+}
+
+input[type=text].minTextbox {
+
+    background: linear-gradient(21deg, #10abff, #1beabd);
+    box-sizing: border-box;
+    border-radius: 5px;
+    border-style: 1px dashed;
+    display: inline-block;
+    font-size: 22px;
+    outline: none;
+    overflow: auto;
+    padding: 5px;
+    width: 500px;
+    text-decoration: none;
+
+}
