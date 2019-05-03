@@ -25,12 +25,13 @@ body {
 
 div.container {
 
+    align-items: center;
     background-color: #473e68;
     border-radius: 10px;
-    display: inline-block;
-    float: center;
+    display: block;
+    margin: auto;
     padding: 10px;
-    
+
 }
 
 a.minButton {
@@ -53,6 +54,48 @@ a.minButton {
 a.minButton:hover {
 
     background-color: pink;
+
+}
+
+a.gvButton {
+
+    background-color: darkgoldenrod;
+    border-radius: 10px;
+    border-style: 1px solid red;
+    display: inline-block;
+    font-family: 'OpenSans-Bold';
+    height: 50px;
+    letter-spacing: 0.1em;
+    margin: 10px;
+    padding: 5px;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.5s ease;
+    vertical-align: middle;
+    width: 50px;
+
+}
+
+p.gvNumber {
+
+    background-color: darkgoldenrod;
+    border-radius: 10px;
+    border-style: 1px solid red;
+    display: inline-block;
+    font-family: 'OpenSans-Bold';
+    height: 50px;
+    letter-spacing: 0.1em;
+    margin: 10px;
+    padding: 5px;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.5s ease;
+    vertical-align: middle;
+    width: 50px;
 
 }
 
