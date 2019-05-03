@@ -28,7 +28,7 @@ div.container {
     align-items: center;
     background-color: #473e68;
     border-radius: 10px;
-    display: block;
+    display: inline-block;
     margin: auto;
     padding: 10px;
 
@@ -57,17 +57,16 @@ a.minButton:hover {
 
 }
 
-a.gvButton {
+div.gvButton {
 
     background-color: darkgoldenrod;
     border-radius: 10px;
     border-style: 1px solid red;
     display: inline-block;
     font-family: 'OpenSans-Bold';
-    height: 50px;
     letter-spacing: 0.1em;
+    line-height: 50px;
     margin: 10px;
-    padding: 5px;
     overflow: hidden;
     text-align: center;
     text-decoration: none;
@@ -78,17 +77,24 @@ a.gvButton {
 
 }
 
-p.gvNumber {
+div.gvButton:hover {
+
+    background-color: greenyellow;
+    cursor: pointer;
+
+}
+
+div.gvNumber {
 
     background-color: darkgoldenrod;
     border-radius: 10px;
     border-style: 1px solid red;
+    cursor: default;
     display: inline-block;
     font-family: 'OpenSans-Bold';
-    height: 50px;
     letter-spacing: 0.1em;
+    line-height: 50px;
     margin: 10px;
-    padding: 5px;
     overflow: hidden;
     text-align: center;
     text-decoration: none;

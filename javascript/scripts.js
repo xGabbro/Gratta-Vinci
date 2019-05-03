@@ -1,9 +1,10 @@
 var number1_100 = [];
 var winNumber = [];
 var probability = [];
-var index = 0;
+var index;
 
 function buildGeV() {
+    index = 0;
 
     for (var i = 1; i < 101; i++) number1_100.push(i);
 
@@ -33,17 +34,17 @@ function buildGeV() {
 
     for (var n = 0; n < 5; n++) {
 
-        var p = document.createElement("p");
+        var div = document.createElement("div");
 
-        p.setAttribute("class", "gvNumber");
+        div.setAttribute("class", "gvNumber");
 
         var number = Math.floor(Math.random() * 100) + 1;
 
         winNumber.push(number);
 
-        p.appendChild(document.createTextNode(number));
+        div.appendChild(document.createTextNode(number));
 
-        gv.appendChild(p);
+        gv.appendChild(div);
 
         number1_100.splice( number1_100.indexOf(n), 1 );
 
@@ -52,15 +53,14 @@ function buildGeV() {
     gv.innerHTML += "</br>";
 
     for (var n = 1; n < 16; n++) {
-        var a = document.createElement("a");
+        var div = document.createElement("div");
 
-        a.setAttribute("id", n);
-        a.setAttribute("class", "gvButton");
-        a.setAttribute("onClick", "sas(" + n + ")");
-        a.setAttribute("href", "#");
-        a.appendChild(document.createTextNode("XX"));
+        div.setAttribute("id", n);
+        div.setAttribute("class", "gvButton");
+        div.setAttribute("onClick", "sas(" + n + ")");
+        div.appendChild(document.createTextNode("XX"));
 
-        gv.appendChild(a);
+        gv.appendChild(div);
 
         if (n % 5 == 0) gv.innerHTML += "</br>";
     }
@@ -91,7 +91,7 @@ function sas(i) {
 
     cel.innerHTML = finalnumber;
 
-    cel.setAttribute("style", "pointer-events: none; cursor: default;");
+    cel.setAttribute("style", "pointer-events: none; cursor: none;");
 
 }
 
