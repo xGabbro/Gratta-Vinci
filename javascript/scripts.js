@@ -51,6 +51,8 @@ function buildGeV() {
     }
 
     gv.innerHTML += "</br>";
+    gv.innerHTML += "</br>";
+    gv.innerHTML += "</br>";
 
     for (var n = 1; n < 16; n++) {
         var div = document.createElement("div");
@@ -69,6 +71,7 @@ function buildGeV() {
 
 function sas(i) {
 
+    var win = false;
     var cel = document.getElementById(i);
     
     var number = Math.floor(Math.random() * probability[index]) + 1;
@@ -78,6 +81,7 @@ function sas(i) {
 
     if (number == probability[index]) {
 
+        win = true;
         finalnumber = winNumber[index];
         index++;
 
@@ -91,7 +95,8 @@ function sas(i) {
 
     cel.innerHTML = finalnumber;
 
-    cel.setAttribute("style", "pointer-events: none; cursor: none;");
+    if (win) cel.setAttribute("style", "pointer-events: none; cursor: none; background-color: forestgreen;");
+    else cel.setAttribute("style", "pointer-events: none; cursor: none; background-color: darkred;");
 
 }
 

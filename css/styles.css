@@ -19,6 +19,12 @@
 
 body {
 
+    background-image: url("../images/kay-537020-unsplash.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center 0px;
+	background-attachment: fixed;
+    float: center;
     font-family: 'OpenSans-Light';
 
 }
@@ -26,11 +32,15 @@ body {
 div.container {
 
     align-items: center;
-    background-color: #473e68;
+    background: 
+    	linear-gradient(#2c2d30, #2c2d30) padding-box,
+        linear-gradient(135deg, #fb3570, #fffb00) border-box;
+    border: 2px solid transparent;
     border-radius: 10px;
-    display: inline-block;
+    display: block;
     margin: auto;
     padding: 10px;
+    width: 1000px;
 
 }
 
@@ -39,15 +49,17 @@ a.minButton {
     background-color: darkgoldenrod;
     border-radius: 10px;
     border-style: 1px solid red;
+    cursor: pointer;
     display: inline;
     font-family: 'OpenSans-Bold';
     letter-spacing: 0.1em;
-    margin: 10px;
+    margin: 5px;
     padding: 5px;
     overflow: hidden;
     text-decoration: none;
     text-transform: uppercase;
     transition: background-color 0.5s ease;
+    vertical-align: middle;
 
 }
 
@@ -86,7 +98,7 @@ div.gvButton:hover {
 
 div.gvNumber {
 
-    background-color: darkgoldenrod;
+    background-color: forestgreen;
     border-radius: 10px;
     border-style: 1px solid red;
     cursor: default;
@@ -107,16 +119,17 @@ div.gvNumber {
 
 input[type=text].minTextbox {
 
-    background: linear-gradient(21deg, #10abff, #1beabd);
+    /*background: linear-gradient(90deg, #fb3570, #fffb00) padding-box;*/
     box-sizing: border-box;
     border-radius: 5px;
     border-style: 1px dashed;
     display: inline-block;
     font-size: 22px;
+    margin: 5px;
     outline: none;
     overflow: auto;
-    padding: 5px;
     width: 500px;
     text-decoration: none;
+    vertical-align: middle;
 
 }
