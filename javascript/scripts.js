@@ -84,7 +84,7 @@ function sas(i) {
     }
     else {
 
-        finalnumber = number1_100[Math.floor(Math.random() * number1_100.length) + 1];
+        finalnumber = number1_100[Math.floor(Math.random() * number1_100.length)];
         number1_100.splice( number1_100.indexOf(finalnumber), 1 );
 
     }
