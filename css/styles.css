@@ -38,9 +38,9 @@ div.container {
     border: 2px solid transparent;
     border-radius: 10px;
     display: block;
-    margin: auto;
+    margin: 0 auto;
     padding: 10px;
-    width: 1000px;
+    max-width: 1000px;
 
 }
 
@@ -100,7 +100,7 @@ div.gvNumber {
 
     background-color: forestgreen;
     border-radius: 10px;
-    border-style: 1px solid red;
+    border-style: 2px solid red;
     cursor: default;
     display: inline-block;
     font-family: 'OpenSans-Bold';
@@ -120,16 +120,27 @@ div.gvNumber {
 input[type=text].minTextbox {
 
     /*background: linear-gradient(90deg, #fb3570, #fffb00) padding-box;*/
-    box-sizing: border-box;
+    border:1px solid;
     border-radius: 5px;
-    border-style: 1px dashed;
     display: inline-block;
     font-size: 22px;
     margin: 5px;
-    outline: none;
+    outline: 0;
     overflow: auto;
     width: 500px;
     text-decoration: none;
     vertical-align: middle;
+
+}
+
+input[type=text].minTextbox:focus {
+
+    animation: 2s linear 0s infinite alternate colorMove;
+
+}
+
+@keyframes colorMove {
+
+    from { border-color: red; } to { border-color: yellowgreen; }
 
 }
