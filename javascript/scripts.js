@@ -1,12 +1,15 @@
-var number1_100 = [];
-var winNumber = [];
-var probability = [];
+var number1_100;
+var winNumber;
+var probability;
 var index;
 
 function buildGeV() {
     index = 0;
+    winNumber = [];
+    probability = [];
+    number1_100 = [];
 
-    for (var i = 1; i < 101; i++) number1_100.push(i);
+    for (var i = 1; i < 100; i++) number1_100.push(i);
 
     var probabilityStr = document.getElementById("probabilityBox").value;
 
@@ -38,7 +41,7 @@ function buildGeV() {
 
         div.setAttribute("class", "gvNumber");
 
-        var number = Math.floor(Math.random() * 100) + 1;
+        var number = number1_100[Math.floor(Math.random() * number1_100.length)];
 
         winNumber.push(number);
 
@@ -46,7 +49,7 @@ function buildGeV() {
 
         gv.appendChild(div);
 
-        number1_100.splice( number1_100.indexOf(n), 1 );
+        number1_100.splice( number1_100.indexOf(number), 1 );
 
     }
 
