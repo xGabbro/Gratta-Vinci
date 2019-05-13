@@ -3,6 +3,36 @@ var winNumber;
 var probability;
 var index;
 
+var presetsProbability = [ "",  "6 ,60,1200,8000,6.720.000", "6,17,436,120.000,4.080.000",
+                                 "11,67,9.231,624.000,12.480.000", "8,60,2400,333.333,6.000.000", 
+                                 "7,52,941,1.050.000,8.400.000", "15,46,1.500,936.000,9.360.000" ];
+                                 
+var presets = [ "nessuno", "il regno delle perdite", "turista mai", "vecchio 20x", "il poveraccio", "il mega poveraccio", "il maxi poveraccio" ];
+
+function init() {
+
+    setupPresets();
+
+}
+
+function setupPresets() {
+    var _combobox = document.getElementById("presets");
+
+    var i = 0;
+    presets.forEach(element => {
+        var _option = document.createElement("option");
+        
+        _option.setAttribute("value", element);
+        _option.setAttribute("onClick", "loadPreset(" + i + ")");
+        _option.appendChild(document.createTextNode(element.toUpperCase()));
+
+        _combobox.appendChild(_option);
+
+        i++;
+    });
+
+}
+
 function buildGeV() {
     index = 0;
     winNumber = [];
@@ -20,15 +50,24 @@ function buildGeV() {
 
     var _probability = probabilityStr.split(",");
 
+    if (_probability.length != 5) {
+        error(1, "Inserire 5 casi possibili!");
+        return;
+    }
+
     _probability.forEach(element => {
-        try {
-            var number = Number(element);
+
+        element = element.replace(".", "");
+
+        if (!isNaN(element)) {
+            var number = parseInt(element, 10);
             probability.push(number);
         }
-        catch(err) {
-            error(1, "inserire numeri validi!");
-            return;
+        else {
+            error(2, "inserire numeri validi!");
+            break;
         }
+
     });
 
     var gv = document.getElementById("Gratta&Vinci");
@@ -136,6 +175,18 @@ function sas(i) {
 
     if (win) cel.setAttribute("style", "pointer-events: none; content: none; cursor: none; background-color: forestgreen;");
     else cel.setAttribute("style", "pointer-events: none; content: none; cursor: none; background-color: darkred;");
+
+}
+
+function loadPreset(i) {
+
+    document.getElementById("probabilityBox").value = presetsProbability[i];
+
+}
+
+function setDefaultValue() {
+
+    document.getElementById("presets").selectedIndex = "0"; 
 
 }
 
