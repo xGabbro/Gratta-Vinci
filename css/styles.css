@@ -71,9 +71,9 @@ a.minButton:hover {
 
 div.gvButton {
 
-    background-color: darkgoldenrod;
     border-radius: 10px;
-    border-style: 1px solid red;
+    border: 1px solid transparent;
+    content: url("../images/money.png");
     display: inline-block;
     font-family: 'OpenSans-Bold';
     letter-spacing: 0.1em;
@@ -84,23 +84,31 @@ div.gvButton {
     text-decoration: none;
     text-transform: uppercase;
     transition: background-color 0.5s ease;
+    user-select: none;
     vertical-align: middle;
     width: 50px;
+
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */ 
 
 }
 
 div.gvButton:hover {
 
-    background-color: greenyellow;
+    
     cursor: pointer;
 
 }
 
 div.gvNumber {
 
-    background-color: forestgreen;
     border-radius: 10px;
     border-style: 2px solid red;
+    background-color: orangered;
+    background-image: url("../images/gold_ingots.png");
+    background-size: cover;
     cursor: default;
     display: inline-block;
     font-family: 'OpenSans-Bold';

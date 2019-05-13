@@ -91,15 +91,51 @@ function sas(i) {
     }
     else {
 
-        finalnumber = number1_100[Math.floor(Math.random() * number1_100.length)];
+        var sus = Math.floor(Math.random() * 3) + 1;
+
+        var pari = false;
+
+        var offset = Math.floor(Math.random() * 3) + 1;;
+
+        if (sus == 2) {
+
+            if (winNumber % 2 == 0) {
+
+                finalnumber = winNumber[index] + offset;
+                pari = true;
+
+            } 
+            else {
+
+                finalnumber = winNumber[index] - offset;
+
+            }
+
+            if (number1_100.indexOf(finalnumber) == -1) {
+
+                if (pari) finalnumber -= offset * -2;
+                else finalnumber += offset * -2;
+                
+                if (number1_100.indexOf(finalnumber) == -1)
+                    finalnumber = number1_100[Math.floor(Math.random() * number1_100.length)];
+
+            }
+
+        }
+        else {
+
+            finalnumber = number1_100[Math.floor(Math.random() * number1_100.length)];
+
+        }
+
         number1_100.splice( number1_100.indexOf(finalnumber), 1 );
 
     }
 
     cel.innerHTML = finalnumber;
 
-    if (win) cel.setAttribute("style", "pointer-events: none; cursor: none; background-color: forestgreen;");
-    else cel.setAttribute("style", "pointer-events: none; cursor: none; background-color: darkred;");
+    if (win) cel.setAttribute("style", "pointer-events: none; content: none; cursor: none; background-color: forestgreen;");
+    else cel.setAttribute("style", "pointer-events: none; content: none; cursor: none; background-color: darkred;");
 
 }
 
