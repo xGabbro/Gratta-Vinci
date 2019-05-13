@@ -55,6 +55,7 @@ function buildGeV() {
         return;
     }
 
+    var _flag = false;
     _probability.forEach(element => {
 
         element = element.replace(".", "");
@@ -64,11 +65,15 @@ function buildGeV() {
             probability.push(number);
         }
         else {
-            error(2, "inserire numeri validi!");
-            break;
+            _flag = true;
         }
 
     });
+
+    if (_flag == true) {
+        error(2, "Inserire numeri validi!");
+        return;
+    }
 
     var gv = document.getElementById("Gratta&Vinci");
 
