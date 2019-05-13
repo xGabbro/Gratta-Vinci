@@ -44,7 +44,7 @@ function buildGeV() {
     var probabilityStr = document.getElementById("probabilityBox").value;
 
     if (probabilityStr == "" || probabilityStr == null) {
-        error(0, "Inserire le probabilità!");
+        error(0, "Inserire i casi possibili!");
         return;
     }
 
