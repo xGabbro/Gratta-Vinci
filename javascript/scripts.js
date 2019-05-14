@@ -3,7 +3,9 @@ var winNumber;
 var probability;
 var index;
 
-var presetsProbability = [ "",  "6 ,60,1200,8000,6.720.000", "6,17,436,120.000,4.080.000",
+var sasi = 0;
+
+var presetsProbability = [ "",  "6,60,1200,8000,6.720.000", "6,17,436,120.000,4.080.000",
                                  "11,67,9.231,624.000,12.480.000", "8,60,2400,333.333,6.000.000", 
                                  "7,52,941,1.050.000,8.400.000", "15,46,1.500,936.000,9.360.000" ];
                                  
@@ -34,10 +36,14 @@ function setupPresets() {
 }
 
 function buildGeV() {
+    sasi = 0;
     index = 0;
     winNumber = [];
     probability = [];
     number1_100 = [];
+
+    var basecon = document.getElementById("basecon");
+    basecon.setAttribute("style", "");
 
     for (var i = 1; i < 100; i++) number1_100.push(i);
 
@@ -114,6 +120,9 @@ function buildGeV() {
         if (n % 5 == 0) gv.innerHTML += "</br>";
     }
 
+    var _scratchButton = document.getElementById("scratchButton");
+    _scratchButton.setAttribute("style", "");
+
 }
 
 function sas(i) {
@@ -174,6 +183,14 @@ function sas(i) {
 
         number1_100.splice( number1_100.indexOf(finalnumber), 1 );
 
+        if (sasi == 0) {
+
+            var _scratchButton = document.getElementById("scratchButton");
+            _scratchButton.setAttribute("style", "background-color: whitesmoke; cursor: none; pointer-events: none;");
+            sasi = 1;
+
+        }
+
     }
 
     cel.innerHTML = finalnumber;
@@ -192,6 +209,15 @@ function loadPreset(i) {
 function setDefaultValue() {
 
     document.getElementById("presets").selectedIndex = "0"; 
+
+}
+
+function scratchAll() {
+
+    var _scratchButton = document.getElementById("scratchButton");
+    _scratchButton.setAttribute("style", "background-color: whitesmoke; cursor: none; pointer-events: none;");
+
+    for(var i = 1; i < 16; i++) sas(i);
 
 }
 
