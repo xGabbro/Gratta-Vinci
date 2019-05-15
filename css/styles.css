@@ -46,13 +46,13 @@ div.container {
 
 a.minButton {
 
-    background-color: darkgoldenrod;
+    background-color: orangered;
     border-radius: 10px;
-    border-style: 1px solid red;
+    border: 1px solid red;
     cursor: pointer;
-    display: inline;
-    font-family: 'OpenSans-Bold';
-    letter-spacing: 0.1em;
+    display: inline-block;
+    font-family: 'OpenSans';
+    letter-spacing: 0.2em;
     margin: 5px;
     padding: 5px;
     overflow: hidden;
@@ -65,7 +65,8 @@ a.minButton {
 
 a.minButton:hover {
 
-    background-color: pink;
+    background-color: red;
+    padding: 5px;
 
 }
 
@@ -127,8 +128,8 @@ div.gvNumber {
 
 input[type=text].minTextbox {
 
-    /*background: linear-gradient(90deg, #fb3570, #fffb00) padding-box;*/
-    border:1px solid;
+
+    border:2px solid;
     border-radius: 5px;
     display: inline-block;
     font-size: 22px;
@@ -147,8 +148,23 @@ input[type=text].minTextbox:focus {
 
 }
 
+select.minCombobox {
+
+    border:2px solid;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 22px;
+    margin: 5px;
+    outline: 0;
+    overflow: auto;
+    width: auto;
+    text-decoration: none;
+    vertical-align: middle;
+
+}
+
 @keyframes colorMove {
 
-    from { border-color: red; } to { border-color: yellowgreen; }
+    from { border-color: black; } to { border-color: aqua; }
 
 }

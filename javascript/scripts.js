@@ -24,8 +24,7 @@ function setupPresets() {
     presets.forEach(element => {
         var _option = document.createElement("option");
         
-        _option.setAttribute("value", element);
-        _option.setAttribute("onClick", "loadPreset(" + i + ")");
+        _option.setAttribute("value", i);
         _option.appendChild(document.createTextNode(element.toUpperCase()));
 
         _combobox.appendChild(_option);
@@ -42,16 +41,13 @@ function buildGeV() {
     probability = [];
     number1_100 = [];
 
-    var basecon = document.getElementById("basecon");
-    basecon.setAttribute("style", "");
-
     for (var i = 1; i < 100; i++) number1_100.push(i);
 
     var probabilityStr = document.getElementById("probabilityBox").value;
 
     if (probabilityStr == "" || probabilityStr == null) {
         error(0, "Inserire i casi possibili!");
-        return;
+        return null;
     }
 
     var _probability = probabilityStr.split(",");
@@ -60,6 +56,9 @@ function buildGeV() {
         error(1, "Inserire 5 casi possibili!");
         return;
     }
+
+    var basecon = document.getElementById("basecon");
+    basecon.setAttribute("style", "");
 
     var _flag = false;
     _probability.forEach(element => {
