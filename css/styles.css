@@ -111,10 +111,10 @@ div.gvNumber {
 
     border-radius: 10px;
     border-style: 2px solid red;
-    background-color: orangered;
-    background-image: url("../images/gold_ingots.png");
+    background-color: #ffbb00e1;
+    /*background-image: url("../images/gold_ingots.png");*/
     background-size: cover;
-    color: whitesmoke;
+    color: black;
     cursor: default;
     display: inline-block;
     font-family: 'Product_Sans_Bold';
@@ -195,6 +195,12 @@ input[type=text].minTextbox:focus {
     width: 100%;
     padding: 5px 40px 5px 10px;
     font-size: 14px;
+
+  }
+
+  .custom-select select option {
+
+    background-color: #c72c41;
 
   }
 
