@@ -1,20 +1,20 @@
 @font-face {
-	font-family: 'OpenSans';
-    src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+	font-family: 'Product_Sans_Italic';
+    src: url('../fonts/Product_Sans_Italic.ttf') format('truetype');
 }
 @font-face {
-	font-family: 'OpenSans-Bold';
-    src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'OpenSans-Italic';
-    src: url('../fonts/OpenSans-Italic.ttf') format('truetype');
+	font-family: 'Product_Sans_Bold';
+    src: url('../fonts/Product_Sans_Bold.ttf') format('truetype');
 }
 
 @font-face {
-	font-family: 'OpenSans-Light';
-    src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+	font-family: 'Product_Sans_Regular';
+    src: url('../fonts/Product_Sans_Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Product_Sans_Bold_Italic';
+    src: url('../fonts/Product_Sans_Bold_Italic.ttf') format('truetype');
 }
 
 body {
@@ -25,18 +25,20 @@ body {
 	background-position: center 0px;
 	background-attachment: fixed;
     float: center;
-    font-family: 'OpenSans-Light';
+    font-family: 'Product_Sans_Regular';
 
 }
 
 div.container {
 
     align-items: center;
-    background: 
-    	linear-gradient(#2c2d30, #2c2d30) padding-box,
+    /*background: 
+    	linear-gradient(#424242, #424242) padding-box;
         linear-gradient(135deg, #fb3570, #fffb00) border-box;
-    border: 2px solid transparent;
+    border: 2px solid transparent;*/
+    background-color: #2d142c;
     border-radius: 10px;
+    box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.5);
     display: block;
     margin: 0 auto;
     padding: 10px;
@@ -46,13 +48,14 @@ div.container {
 
 a.minButton {
 
-    background-color: orangered;
+    background-color: #c72c41;
+    border: 2px solid #ee4540;
     border-radius: 10px;
-    border: 1px solid red;
+    color: whitesmoke;
     cursor: pointer;
     display: inline-block;
-    font-family: 'OpenSans';
-    letter-spacing: 0.2em;
+    font-family: 'Product_Sans_Bold';
+    letter-spacing: 0.1em;
     margin: 5px;
     padding: 5px;
     overflow: hidden;
@@ -74,9 +77,11 @@ div.gvButton {
 
     border-radius: 10px;
     border: 1px solid transparent;
+    color: whitesmoke;
     content: url("../images/money.png");
+    cursor: pointer;
     display: inline-block;
-    font-family: 'OpenSans-Bold';
+    font-family: 'Product_Sans_Bold';
     letter-spacing: 0.1em;
     line-height: 50px;
     margin: 10px;
@@ -97,8 +102,7 @@ div.gvButton {
 }
 
 div.gvButton:hover {
-
-    
+ 
     cursor: pointer;
 
 }
@@ -110,9 +114,10 @@ div.gvNumber {
     background-color: orangered;
     background-image: url("../images/gold_ingots.png");
     background-size: cover;
+    color: whitesmoke;
     cursor: default;
     display: inline-block;
-    font-family: 'OpenSans-Bold';
+    font-family: 'Product_Sans_Bold';
     letter-spacing: 0.1em;
     line-height: 50px;
     margin: 10px;
@@ -128,11 +133,13 @@ div.gvNumber {
 
 input[type=text].minTextbox {
 
-
-    border:2px solid;
-    border-radius: 5px;
+    background-color: #c72c41;
+    border: 2px solid #ee4540;
+    border-radius: 10px;
+    color: whitesmoke;
     display: inline-block;
     font-size: 22px;
+    height: 30px;
     margin: 5px;
     outline: 0;
     overflow: auto;
@@ -148,23 +155,74 @@ input[type=text].minTextbox:focus {
 
 }
 
-select.minCombobox {
-
-    border:2px solid;
-    border-radius: 5px;
-    display: inline-block;
-    font-size: 22px;
-    margin: 5px;
-    outline: 0;
-    overflow: auto;
-    width: auto;
-    text-decoration: none;
-    vertical-align: middle;
-
-}
-
 @keyframes colorMove {
 
-    from { border-color: black; } to { border-color: aqua; }
+    from { border-color: transparent; } to { border-color: aqua; }
 
 }
+
+.custom-select {
+
+    border-radius: 10px;
+    width: auto;
+
+    position: relative;
+    color: whitesmoke;
+    display: inline-block;
+    margin: 0 auto;
+    border: 2px solid #ee4540;
+    background-color:#c72c41;
+    z-index: 10;
+
+  }
+
+  .custom-select select {
+
+    border: none;
+    color: whitesmoke;
+    font-family: 'Product_Sans_Regular';
+    height: 30px;
+    letter-spacing: 0.15em;
+
+    outline: none;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    margin: 0;
+    display: block;
+    width: 100%;
+    padding: 5px 40px 5px 10px;
+    font-size: 14px;
+
+  }
+
+  .custom-select:after {
+
+    background-color: #c72c41;
+    border-radius: 0 8px 8px 0;
+    font-family: 'Product_Sans_Bold';
+    height: 30px;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    
+    line-height: 27px;
+    content: "∨";
+    text-align: center;
+    font-size: 22px;
+    border-left: 2px solid #ee4540;
+    z-index: -1;
+
+  }
+
+  .custom-select:hover::after {
+
+    background-color: #ee4540;
+
+  }
+  
+

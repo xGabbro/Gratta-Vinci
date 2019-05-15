@@ -23,11 +23,13 @@
 
         <center>
 
-            <select class="minCombobox" id="presets" onchange="loadPreset(this.value)"></select> 
+            <label class="custom-select" for="presets">
+                <select id="presets" name="options" onchange="loadPreset(this.value)"></select>
+            </label>
 
             <input class="minTextbox" type="text" id="probabilityBox" placeholder="Inserire 5 casi possibili separati da una ','" onfocus="setDefaultValue()" value=""></input>
 
-            <a class="minButton" onclick="buildGeV()">Invia</a>
+            <a class="minButton" onclick="buildGeV()">Genera</a>
 
         </center>
 
