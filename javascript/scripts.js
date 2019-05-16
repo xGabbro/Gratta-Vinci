@@ -143,13 +143,13 @@ function sas(i) {
     }
     else {
 
-        var sus = Math.floor(Math.random() * 3) + 1;
+        var sus = Math.floor(Math.random() * 3);
 
         var pari = false;
 
-        var offset = Math.floor(Math.random() * 3) + 1;;
+        var offset = Math.floor(Math.random() * 4) + 1;;
 
-        if (sus == 2) {
+        if (sus == 1 || sus == 0) {
 
             if (winNumber % 2 == 0) {
 
